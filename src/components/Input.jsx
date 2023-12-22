@@ -2,15 +2,15 @@ import React, { useState } from 'react'
 import { IoAdd } from "react-icons/io5";
 
 function Input({onDataChange}) {
+
   const [Task, setTask] = useState("")
-  const [TaskList, setTaskList] = useState([])
+
   const submitHandler = (e) =>{
     e.preventDefault()
-    setTaskList([...TaskList,{Task}])
-    onDataChange([...TaskList,{Task}])
+    onDataChange(Task)
     setTask("")
-    //console.log(TaskList)
   }
+  
   return (
     <div className='relative top-[9rem] flex items-center justify-center h-20'>
         <form className='h-20' onSubmit={submitHandler}>
